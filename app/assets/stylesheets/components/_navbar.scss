@@ -1,11 +1,12 @@
 .navbar-lewagon {
   justify-content: space-between;
+  background: $go-red;
   background: $gnome-red;
   z-index: 10;
 }
 
 .dropdown-menu {
-  background-color: $gnome-black;
+  background-color: $go-red;
   color: white;
 }
 
