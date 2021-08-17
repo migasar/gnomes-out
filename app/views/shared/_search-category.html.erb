@@ -1,0 +1,4 @@
+<%= simple_form_for :search, url: gnomes_path, method: :get do |f| %>
+  <%= f.input :query, collection: Gnome::CATEGORY %>
+  <%= f.submit "Search" %>
+<% end %>

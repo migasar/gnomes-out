@@ -3,8 +3,11 @@ class GnomesController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
 
   def index
-    @gnomes = Gnome.all
-    authorize @gnomes
+    @gnomes = policy_scope(Gnome)
+
+    if params.dig(:search, :query)
+      @gnomes = @gnomes.where(category: params.dig(:search, :query))
+    end
   end
 
   def show
