@@ -3,13 +3,16 @@ class GnomesController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
 
   def index
-    @gnomes = Gnome.all
-    authorize @gnomes
+    @gnomes = policy_scope(Gnome)
+
+    if params.dig(:search, :query)
+      @gnomes = @gnomes.where(category: params.dig(:search, :query))
+    end
   end
 
   def show
     @gnome = Gnome.find(params[:id])
-    authorize @gnomes
+    authorize @gnome
   end
 
   def new
@@ -29,6 +32,17 @@ class GnomesController < ApplicationController
     @gnome.save
     redirect_to my_gnomes_gnomes_path
   end
+
+  def edit
+    @gnome = Gnome.find(params[:id])
+  end
+
+  def update
+    @gnome = Gnome.find(params[:id])
+    @gnome = Gnome.update(gnomes_params)
+    redirect_to gnome_path(@gnome)
+  end
+
 
   def destroy
     authorize @gnomes

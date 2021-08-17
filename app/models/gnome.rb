@@ -1,5 +1,6 @@
 class Gnome < ApplicationRecord
   belongs_to :user
+  has_many :favorites, dependent: :destroy
   CATEGORY = %w[authentique zombie bdsm familial potache zen groupé mignon connu]
   COLOR = %w[rouge vert blanc jaune orange bleu noir]
   MOOD = %w[joyeux triste colérique détendu]

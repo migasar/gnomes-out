@@ -31,7 +31,7 @@
           <%= link_to "Mes reservations", "#", class: "dropdown-item text-light" %>
           <%= link_to "Mes favoris", "#", class: "dropdown-item text-light" %>
           <%= link_to "Mes gnomes", my_gnomes_gnomes_path, class: "dropdown-item text-light" %>
-          <%= link_to "Deconnexion", destroy_user_session_path, class: "dropdown-item text-light" %>
+          <%= link_to "Deconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item text-light" %>
         </div>
       </li>
     </ul>
