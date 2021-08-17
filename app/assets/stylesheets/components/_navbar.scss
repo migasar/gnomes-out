@@ -1,11 +1,12 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: rgba(186, 18, 0, 1);
- }
- .dropdown-menu{
-   background-color: #031927ff;
-   color: white;
- }
+  background: $gnome-red;
+}
+
+.dropdown-menu {
+  background-color: $gnome-black;
+  color: white;
+}
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
@@ -15,9 +16,8 @@
   width: 40px;
 }
 
-.sticky{
+.sticky {
   position: fixed;
   top: 0;
   width: 100%;
 }
-
