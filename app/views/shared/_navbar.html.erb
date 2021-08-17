@@ -1,9 +1,10 @@
 <div class="navbar navbar-expand-sm navbar-dark navbar-lewagon sticky">
   <%= link_to "#", class: "navbar-brand " do %>
-    <%= image_tag "logo-go.jpg", class: "avatar"%>
+  <%= image_tag "logo-go.jpg", class: "avatar"%>
   <% end %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -16,11 +17,15 @@
       <li class="nav-item">
         <%= link_to "Enregistrement", new_user_registration_path, class: "nav-link" %>
       </li>
-       <li class="nav-item">
+      <li class="nav-item">
         <%= link_to "Connexion",  new_user_session_path, class: "nav-link" %>
       </li>
       <li class="nav-item dropleft">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle dropleft", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier",
+            class: "avatar dropdown-toggle dropleft",
+            id: "navbarDropdown",
+            data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false
+          %>
         <div class="dropdown-menu dropdown-menu-right " aria-labelledby="navbarDropdown">
           <%= link_to "Profil", "#", class: "dropdown-item text-light" %>
           <%= link_to "Mes reservations", "#", class: "dropdown-item text-light" %>
