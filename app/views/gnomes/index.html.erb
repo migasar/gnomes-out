@@ -1,5 +1,14 @@
-<h1>All gnomes</h1>
-
-<% @gnomes.each do |gnome|%>
-<%= gnome.name %>
-<% end %>
+<div class="container">
+  <div class="margin-navbar">
+    <h1>Gnomes</h1>
+    <% @gnomes.each do |gnome|%>
+    <div class="card-product">
+      <img src="<%= gnome.photo %>" />
+      <div class="card-product-infos">
+        <h2><%= link_to gnome.name, gnome_path(gnome) %></h2>
+        <p><strong><%= gnome.price %></strong>€ par jour</p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

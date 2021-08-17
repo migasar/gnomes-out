@@ -12,7 +12,7 @@ class GnomesController < ApplicationController
 
   def show
     @gnome = Gnome.find(params[:id])
-    authorize @gnomes
+    authorize @gnome
   end
 
   def new
