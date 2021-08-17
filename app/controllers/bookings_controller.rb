@@ -18,6 +18,7 @@ class BookingsController < ApplicationController
   def create
     @gnome = Gnome.find(params[:gnome_id])
     @booking = Booking.new(booking_params)
+    authorize @bookings
     @booking.gnome = @gnome
     if @booking.save
       redirect_to gnome_bookings_path
@@ -29,6 +30,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = booking.find(params[:id])
     @gnome = @booking.gnome
+    authorize @bookings
     @booking.destroy
     redirect_to gnome_bookings_path
   end
