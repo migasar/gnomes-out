@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: $gnome-red;
+  z-index: 10;
 }
 
 .dropdown-menu {
@@ -20,4 +21,8 @@
   position: fixed;
   top: 0;
   width: 100%;
+}
+
+.margin-navbar{
+  margin-top: 60px;
 }
