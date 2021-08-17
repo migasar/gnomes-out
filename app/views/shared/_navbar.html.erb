@@ -11,13 +11,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "Acceuil", "#", class: "nav-link" %>
+        <%= link_to "Accueil", "#", class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Enregistrement", "#", class: "nav-link" %>
+        <%= link_to "Enregistrement", new_user_registration_path, class: "nav-link" %>
       </li>
        <li class="nav-item">
-        <%= link_to "Connexion", "#", class: "nav-link" %>
+        <%= link_to "Connexion",  new_user_session_path, class: "nav-link" %>
       </li>
       <li class="nav-item dropleft">
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle dropleft", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -25,8 +25,8 @@
           <%= link_to "Profil", "#", class: "dropdown-item text-light" %>
           <%= link_to "Mes reservations", "#", class: "dropdown-item text-light" %>
           <%= link_to "Mes favoris", "#", class: "dropdown-item text-light" %>
-          <%= link_to "Mes gnomes", "#", class: "dropdown-item text-light" %>
-          <%= link_to "Deconnexion", "#", class: "dropdown-item text-light" %>
+          <%= link_to "Mes gnomes", my_gnomes_gnomes_path, class: "dropdown-item text-light" %>
+          <%= link_to "Deconnexion", destroy_user_session_path, class: "dropdown-item text-light" %>
         </div>
       </li>
     </ul>
