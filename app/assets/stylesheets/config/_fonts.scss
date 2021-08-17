@@ -1,9 +1,18 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 
+// Import Google fonts dedicated to this project
+@import url(
+  'https://fonts.googleapis.com/css2?family=Boogaloo&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap'
+  );
+
 // Define fonts for body and headers
 $body-font: "Work Sans", "Helvetica", "sans-serif";
 $headers-font: "Nunito", "Helvetica", "sans-serif";
+
+// Define fonts for body and headers dedicated to this project
+$gnome-body-font: "Ubuntu", "Helvetica", "sans-serif";
+$gnome-headers-font: "Boogaloo", "cursive";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
