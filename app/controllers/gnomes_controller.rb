@@ -5,8 +5,8 @@ class GnomesController < ApplicationController
   def index
     @gnomes = policy_scope(Gnome)
 
-    if params.dig(:search, :query)
-      @gnomes = @gnomes.where(category: params.dig(:search, :query))
+    if params.dig(:search, :category)
+      @gnomes = @gnomes.where(category: params.dig(:search, :category))
     end
   end
 
