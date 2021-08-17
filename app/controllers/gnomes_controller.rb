@@ -30,6 +30,17 @@ class GnomesController < ApplicationController
     redirect_to my_gnomes_gnomes_path
   end
 
+  def edit
+    @gnome = Gnome.find(params[:id])
+  end
+
+  def update
+    @gnome = Gnome.find(params[:id])
+    @gnome = Gnome.update(gnomes_params)
+    redirect_to gnome_path(@gnome)
+  end
+
+
   def destroy
     authorize @gnomes
     @gnome = Gnome.find(params[:id])
