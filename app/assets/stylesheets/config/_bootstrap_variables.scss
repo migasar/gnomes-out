@@ -4,10 +4,8 @@
 // 3. You can override them below!
 
 // General style
-$font-family-sans-serif:  $gnome-body-font;
-$headings-font-family:    $gnome-headers-font;
-// $font-family-sans-serif:  $body-font;
-// $headings-font-family:    $headers-font;
+$font-family-sans-serif:  $body-font;
+$headings-font-family:    $headers-font;
 $body-bg:                 $light-gray;
 $font-size-base: 1rem;
 
@@ -25,3 +23,14 @@ $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
+
+// Project fonts
+$font-family-sans-serif:  $gnome-body-font;
+$headings-font-family:    $gnome-headers-font;
+
+// Project colors
+$body-bg:     $gnome-blue-gray;
+$body-color:  $gnome-black;
+$primary:     $gnome-blue-light;
+$success:     $gnome-red;
+$info:        $gnome-blue-medium;
