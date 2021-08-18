@@ -26,3 +26,12 @@
 .margin-navbar{
   margin-top: 60px;
 }
+
+.navbar-brand{
+  display:flex;
+  align-items: center;
+  p{
+    padding-left: 15px;
+    margin-bottom: 4px;
+  }
+}
