@@ -1,0 +1,18 @@
+
+.card-show {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gnome-detail {
+  text-align: justify;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+ .gnome-detail img {
+  width: 540px;
+  height: 540px;
+}
