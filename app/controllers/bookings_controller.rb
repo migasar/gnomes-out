@@ -35,8 +35,6 @@ class BookingsController < ApplicationController
     redirect_to gnome_bookings_path
   end
 
-
-
   private
 
   def booking_params
