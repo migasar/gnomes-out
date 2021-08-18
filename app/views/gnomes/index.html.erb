@@ -1,17 +1,17 @@
 <div class="container">
   <div class="margin-navbar">
-
-    <h1>Gnomes <%= @curent_category %>s</h1>
-    <div class="card-container">
-      <% @gnomes.each do |gnome|%>
-      <div class="card-product">
-        <img src="<%= gnome.photo %>" />
-        <div class="card-product-infos">
-          <h2><%= link_to gnome.name, gnome_path(gnome) %></h2>
-            <div class="adopt"><p>Adoptez-moi !</p></div>
-          <p><strong><%= gnome.price %></strong>€ par jour</p>
-        </div>
-      </div>
+    <div class="first-title"><h1>Gnomes <%= @curent_category %>s</h1></div>
+      <div class="map-wrapper"><%= image_tag "map.png", class: "mapgnomes" %></div>
+        <div class="card-container">
+          <% @gnomes.each do |gnome|%>
+          <div class="card-product">
+            <img src="<%= gnome.photo %>" />
+            <div class="card-product-infos">
+              <h2><%= link_to gnome.name, gnome_path(gnome) %></h2>
+                <div class="adopt"><p>Adoptez-moi !</p></div>
+              <p><strong><%= gnome.price %></strong>€ par jour</p>
+            </div>
+          </div>
       <% end %>
     </div>
   </div>
