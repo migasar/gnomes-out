@@ -20,11 +20,12 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.gnome = @gnome
     @booking.user = current_user
+    @booking.price_total= 84
     authorize @booking
     if @booking.save
-      redirect_to root_path
+      redirect_to  gnome_booking_path(@gnome, @booking)
     else
-      redirect_to root_path
+      redirect_to  gnome_booking_path(@gnome, @booking)
     end
   end
 
@@ -35,6 +36,7 @@ class BookingsController < ApplicationController
     @booking.destroy
     redirect_to gnome_bookings_path
   end
+
 
   private
 
