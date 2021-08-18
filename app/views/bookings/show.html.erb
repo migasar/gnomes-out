@@ -1,6 +1,6 @@
 <div class="container">
   <div class="margin-navbar">
-    <h1>Réservez votre nain de jardin</h1>
+    <h1>Récapitulatif de votre réservation</h1>
 
     <div class="dual-containers">
       <div class="card-summary-gnome">
@@ -9,6 +9,13 @@
       </div>
 
       <div class="card-summary-booking">
+        <h2>Récapitulatif de votre réservation</h2>
+        <li>
+          <ul>Date de début: <%= @booking.date_start %></ul>
+          <ul>Date de fin: <%= @booking.date_end %></ul>
+          <ul>Montant de la réservation: <%= @booking.price_total %></ul>
+          <ul>Propriétaire du nain: <%= @booking.index_bookings_on_user_id %></ul>
+        </li>
       </div>
     </div>
 
