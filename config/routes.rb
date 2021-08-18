@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     collection do
       get :my_gnomes
     end
-    resources :bookings, only: [:index, :new, :create, :edit, :update, :delete]
+    resources :bookings, only: [:index, :new, :create, :edit, :update, :delete] do
+      member do
+        get :mockup_show
+      end
+    end
   end
 end
