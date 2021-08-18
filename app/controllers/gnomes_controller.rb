@@ -4,15 +4,16 @@ class GnomesController < ApplicationController
 
   def index
     @gnomes = policy_scope(Gnome)
-
     if params.dig(:search, :category)
       @gnomes = @gnomes.where(category: params.dig(:search, :category))
+      @curent_category = params.dig(:search, :category)
     end
   end
 
   def show
     @gnome = Gnome.find(params[:id])
     authorize @gnome
+    @booking = Booking.new
   end
 
   def new
