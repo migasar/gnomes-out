@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2021_08_18_102903) do
     t.float "price_total"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "validated", default: false, null: false
     t.index ["gnome_id"], name: "index_bookings_on_gnome_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
