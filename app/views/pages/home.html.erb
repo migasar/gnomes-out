@@ -1,9 +1,8 @@
-
-<div class="banner"
-  style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-  url(<%= image_path('background-gnome.jpg') %>)">
-    <%= render 'shared/search-category' %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= image_path('background-gnome.jpg') %>)">
+  <%= render 'shared/search-category' %>
 </div>
-<div class="container ">
-  <%= render 'shared/cardsgrid' %>
+
+<div class="gallery">
+  <%= render 'shared/card-article' %>
+  <%= render 'shared/card-grid' %>
 </div>

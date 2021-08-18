@@ -1,0 +1,27 @@
+.card-article {
+  margin-top: 40px;
+  background: whitesmoke;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-article > img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-article h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.card-article p {
+  font-size: 1rem;
+  font-weight: medium;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-article .card-article-text {
+  padding: 16px;
+  text-align: left;
+}
