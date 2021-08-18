@@ -6,7 +6,7 @@
 }
 
 .polaroid {
-  background: #fff;
+  background: whitesmoke;
   padding: 1rem;
   box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.2);
 }
@@ -17,9 +17,8 @@
 }
 
 .caption {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   text-align: center;
-  line-height: 2em;
 }
 
 .card-polaroid .polaroid:before {
