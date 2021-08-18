@@ -13,6 +13,7 @@ class GnomesController < ApplicationController
   def show
     @gnome = Gnome.find(params[:id])
     authorize @gnome
+    @booking = Booking.new
   end
 
   def new

@@ -1,0 +1,18 @@
+          <p> Salut ! Nous sommes <%= @gnome.name %>  de magnigiques nains de <%= @gnome.size.to_i %> cm et pesant <%= @gnome.weight.to_i %> grammes !
+          <br>
+          <%= if @gnome.outsider
+                'Nous aimons aller à l\'exterieur par tout temps'
+              else
+                'Nous préfèrons rester au chaud à l\'intérieur. Dehors, c\'est pour les campagnards !'
+              end %>
+          <br>
+          <%= if @gnome.traveler
+                'En plus , nous voudrions voir du pays !'
+              else
+                'Nous sommes chauvins, nous ne voulons pas voyager!'
+              end %>
+          <br>
+          Nous pouvons nous joindre à vous pour la somme de <%= @gnome.price.to_i %> euros par jour !
+
+          N'hésitez pas à nous réserver, nous sommes très demandés !
+          </p>

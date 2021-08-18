@@ -1,0 +1,33 @@
+          <p> Hey! Moi, c'est <%= @gnome.name %>! Je suis
+          <%= if @gnome.gender == "homme"
+                'un nain'
+              else
+                'une naine'
+              end %>
+          de <%= @gnome.size.to_i %> cm et pesant <%= @gnome.weight.to_i %> grammes !
+          <br>
+          <%= if @gnome.outsider
+                'J\'aime aller à l\'exterieur par tout temps'
+              else
+                'Je préfère rester au chaud à l\'intérieur. Dehors, c\'est pour les campagnards !'
+              end %>
+          <br>
+          <%= if @gnome.traveler
+                'En plus , je voudrais voir du pays !'
+              else
+                if @gnome.gender == "homme"
+                  'Je suis chauvin, je ne veux pas voyager!'
+                else
+                  'Je suis chauvine, je ne veux pas voyager!'
+                end
+          end %>
+          <br>
+          Je peux me joindre à vous pour la somme de <%= @gnome.price.to_i %> euros par jour !
+          <br>
+          N'hésitez pas à me réserver, je suis très
+          <%= if @gnome.gender == "homme"
+                'demandé'
+              else
+                'demandée'
+              end %>
+          </p>

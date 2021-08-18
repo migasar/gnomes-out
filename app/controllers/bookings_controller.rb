@@ -1,16 +1,16 @@
 class BookingsController < ApplicationController
   def index
     @bookings = booking.all
-    authorize @bookings
+    authorize @booking
   end
 
   def show
     @booking = Booking.find(params[:id])
-    authorize @bookings
+    authorize @booking
   end
 
   def new
-    authorize @bookings
+    authorize @booking
     @gnome = Gnome.find(params[:gnome_id])
     @booking = Booking.new
   end
@@ -18,24 +18,25 @@ class BookingsController < ApplicationController
   def create
     @gnome = Gnome.find(params[:gnome_id])
     @booking = Booking.new(booking_params)
-    authorize @bookings
     @booking.gnome = @gnome
-    if @booking.save
-      redirect_to gnome_bookings_path
-    else
-      render :new
-    end
+    @booking.user = current_user
+    authorize @booking
+    @booking.save!
+    #   raise
+    #   redirect_to root_path
+    # else
+    #   raise
+    #   redirect_to gnome_path(@gnome)
+    # end
   end
 
   def destroy
     @booking = booking.find(params[:id])
     @gnome = @booking.gnome
-    authorize @bookings
+    authorize @booking
     @booking.destroy
     redirect_to gnome_bookings_path
   end
-
-
 
   private
 
