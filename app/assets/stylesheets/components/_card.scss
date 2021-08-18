@@ -69,3 +69,19 @@
 .first-title {
   margin-top: 20px;
 }
+.dual-containers{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-ghost {
+  color: white;
+  border: 1px solid white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+
+  transition: opacity 0.3s ease;
+  background-color: $go-red;
+}
