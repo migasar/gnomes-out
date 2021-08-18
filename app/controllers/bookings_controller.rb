@@ -21,13 +21,11 @@ class BookingsController < ApplicationController
     @booking.gnome = @gnome
     @booking.user = current_user
     authorize @booking
-    @booking.save!
-    #   raise
-    #   redirect_to root_path
-    # else
-    #   raise
-    #   redirect_to gnome_path(@gnome)
-    # end
+    if @booking.save
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
   end
 
   def destroy
