@@ -40,6 +40,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 40px;
 }
 
 .adopt p{
@@ -48,4 +49,23 @@
 
 .card-product-infos a {
   font-size: 27px;
+}
+
+.mapgnomes {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 50px;
+  border-radius: 4px;
+  margin-top: 27px;
+}
+
+.map-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.first-title {
+  margin-top: 20px;
 }
