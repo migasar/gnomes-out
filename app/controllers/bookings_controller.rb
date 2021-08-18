@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @gnome = Gnome.find(params[:gnome_id])
     authorize @booking
   end
 

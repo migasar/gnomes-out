@@ -2,7 +2,7 @@
   <div class="margin-navbar">
     <h1>Récapitulatif de votre réservation</h1>
 
-    <div class="dual-containers">
+    <div class="dual-containers ">
       <div class="card-summary-gnome">
         <h2><%= @gnome.name %></h2>
         <%= image_tag @gnome.photo %>
@@ -14,8 +14,9 @@
           <ul>Date de début: <%= @booking.date_start %></ul>
           <ul>Date de fin: <%= @booking.date_end %></ul>
           <ul>Montant de la réservation: <%= @booking.price_total %></ul>
-          <ul>Propriétaire du nain: <%= @booking.index_bookings_on_user_id %></ul>
+          <ul>Propriétaire du nain: <strong>Blanche Neige</strong></ul>
         </li>
+        <%= link_to "Valider ma commande", root_path, class: "btn btn-ghost" %>
       </div>
     </div>
 
