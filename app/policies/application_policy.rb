@@ -46,6 +46,8 @@ class ApplicationPolicy
       scope.all
     end
 
+
+
     private
 
     attr_reader :user, :scope
