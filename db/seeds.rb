@@ -41,7 +41,7 @@ Gnome.create!(name: 'Yupi', size: 35, weight: 550, state: 'bon état', category:
 Gnome.create!(name: 'Koupin & Purlavi', size: 75, weight: 1320, state:'bon état', category: 'Groupé', gender: 'homme', mood:'Joyeux', outsider: false, traveler:false, available: true, price: 152, color:'Bleu', photo:'https://m.media-amazon.com/images/I/81emNi94qYL._AC_SX425_.jpg', user:User.all.sample)
 Gnome.create!(address: "16 villa Gaudelet, Paris", name: 'Amy & Detoujur', size: 68, weight: 968, state:'bon état', category: 'Groupé', gender: 'homme', mood: 'Joyeux', outsider: false, traveler:false, available: true, price: 152, color:'Bleu', photo:'https://content.pearl.fr/media/cache/default/article_large_high_nocrop/shared/images/articles/N/NX1/nain-de-jardin-duo-de-nains-avec-lapin-et-souche-d-arbre-ref_NX1262_1.jpg', user:User.all.sample)
 
-puts 'Creating a lot of Gnomes'
+puts 'Creating a lot of Gnomes' 
 
 20.times do
   gnome = Gnome.create!(
