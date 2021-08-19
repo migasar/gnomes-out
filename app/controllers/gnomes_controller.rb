@@ -3,16 +3,28 @@ class GnomesController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
 
   def index
+  #  @gnomes = policy_scope(Gnome)
+  #  if params.dig(:search, :category)
+  #    if params.dig(:search, :category) == ""
+  #      if params.dig(:search, :color) == ""
+  #        @gnomes = Gnome.all
+  #      else
+  #        @gnomes = @gnomes.where(color: params.dig(:search, :color))
+  #      end
+  #    else
+  #      if params.dig(:search, :color) == ""
+  #        @gnomes = @gnomes.where(category: params.dig(:search, :category))
+  #      else
+  #        @gnomes = @gnomes.where(color: params.dig(:search, :color), category: params.dig(:search, :category))
+  #      end
+  #    end
+  #  end
+
     @gnomes = policy_scope(Gnome)
-    if params.dig(:search, :category)
-      if params.dig(:search, :category) == ""
-        @gnomes = Gnome.all
-        @curent_category = ""
-      else
-        @gnomes = @gnomes.where(category: params.dig(:search, :category))
-        @curent_category = params.dig(:search, :category)+"s"
-      end
-    end
+    @gnomes = @gnomes.where(category: params.dig(:search, :category)) if params.dig(:search, :category) && params.dig(:search, :category) != ""
+    @gnomes = @gnomes.where(color: params.dig(:search, :color)) if params.dig(:search, :color) && params.dig(:search, :color) != ""
+    @gnomes = @gnomes.where(mood: params.dig(:search, :mood)) if params.dig(:search, :mood) && params.dig(:search, :mood) != ""
+
     @markers = @gnomes.geocoded.map do |gnome|
       {
         lat: gnome.latitude,

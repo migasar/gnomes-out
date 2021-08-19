@@ -1,6 +1,12 @@
 <div class="container">
-  <%= simple_form_for :search, url: gnomes_path, method: :get do |f| %>
-    <%= f.input :category, collection: Gnome::CATEGORY, label: "Quelle categorie de gnome cherchez vous?", label_html: {class: "text-white"} %>
-    <%= f.submit "Search" %>
-  <% end %>
+  <div class="form_search">
+    <%= simple_form_for :search, url: gnomes_path, method: :get do |f| %>
+      <div class="questions">
+        <%= f.input :category, collection: Gnome::CATEGORY, label: "Quelle categorie de gnome cherchez vous?", label_html: {class: "text-white mb-3"} %>
+        <%= f.input :color, collection: Gnome::COLOR, label: "Quelle couleur de gnome cherchez vous?", label_html: {class: "text-white mb-3"} %>
+        <%= f.input :mood, collection: Gnome::MOOD, label: "Quelle humeur de gnome cherchez vous?", label_html: {class: "text-white mb-3"} %>
+      </div>
+      <%= f.submit "Trouver votre gnome", class: "btn-ghost" %>
+    <% end %>
+  </div>
 </div>
