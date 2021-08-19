@@ -3,7 +3,7 @@ require 'faker'
 CATEGORY = %w[Authentique Zombie Bdsm Familial Potache Zen Groupé Mignon Connu]
 COLOR = %w[Rouge Vert Blanc Jaune Orange Bleu Noir]
 MOOD = %w[Joyeux Triste Colérique Détendu]
-
+Booking.destroy_all
 User.destroy_all
 
 User.create!(email: 'user1@gnomes.fr', password: 'user01', first_name: 'User1', last_name: 'One', address: '75, rue Nationale 75006 Paris', phone_number:'01.01.01.01.01')
