@@ -1,0 +1,65 @@
+.card-all-gnomes{
+  .card-polaroid {
+    width: 270px;
+    height: 300px;
+    display: inline-block;
+    margin-top: 2rem;
+
+  }
+
+  .polaroid {
+    background: whitesmoke;
+    padding: 1rem;
+    box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.2);
+
+  }
+
+  .polaroid-img{
+    height: 177px;
+
+    display: flex;
+    justify-content: center;
+
+        max-width: 100%;
+        background-size: cover;
+        background-position: top center;
+        object-fit: cover;
+
+
+  }
+
+  .caption {
+    font-size: 1.2rem;
+    text-align: center;
+    padding-top: 7px;
+    a{
+      color: $go-black;
+    }
+    p{
+      margin-bottom: 1;
+    }
+  }
+
+
+
+
+  .card-polaroid:hover {
+    filter: none;
+    transform: scale(1, 1) rotate(0deg) !important;
+    transition: all 0.35s;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .card-polaroid:hover .polaroid:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    transform: rotate(0deg);
+    height: 90%;
+    width: 90%;
+    bottom: 0%;
+    right: 5%;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+    transition: all 0.35s;
+  }
+}
