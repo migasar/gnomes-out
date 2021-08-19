@@ -2,6 +2,9 @@
   <div class="margin-navbar">
       <div class="container">
         <div class="first-title mb-4"><h1>Gnomes <%= @curent_category %></h1></div>
+        <div class="mapbox" id="map"
+        style="width: 100%; height: 600px;"data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         <div class="card-all-gnomes">
           <% @gnomes.each do |gnome|%>
               <div class="card-product">
