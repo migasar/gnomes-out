@@ -13,6 +13,12 @@ class GnomesController < ApplicationController
         @curent_category = params.dig(:search, :category)+"s"
       end
     end
+    @markers = @gnomes.geocoded.map do |gnome|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def show
