@@ -2,7 +2,7 @@
   <div class="margin-navbar">
     <div id="gnome-presentation">
       <div class="card-show">
-        <div class="gnome-detail"><%= image_tag @gnome.photo %></div>
+        <div class="gnome-detail"><%= image_tag(@gnome.photo, class:"photo-gnome") %></div>
         <div class="gnome-detail">
           <h1><%= @gnome.name %></h1>
           <%= if @gnome.category == "groupé"
