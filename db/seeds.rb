@@ -1,16 +1,28 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or create!d alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create!([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create!(name: 'Luke', movie: movies.first)
+require 'faker'
+
+CATEGORY = %w[Authentique Zombie Bdsm Familial Potache Zen Groupé Mignon Connu]
+COLOR = %w[Rouge Vert Blanc Jaune Orange Bleu Noir]
+MOOD = %w[Joyeux Triste Colérique Détendu]
+
 User.destroy_all
 
-User.create!(email: 'user1@gnomes.fr', password: 'user01', first_name: 'User1', last_name: 'One', address: '1, rue villa godelet 75011 Paris', phone_number:'01.01.01.01.01')
-User.create!(email: 'user2@gnomes.fr', password: 'user02', first_name: 'User2', last_name: 'Two', address: '2, rue villa godelet 75011 Paris', phone_number:'01.01.01.01.02')
-User.create!(email: 'user3@gnomes.fr', password: 'user03', first_name: 'User3', last_name: 'Three', address: '3, rue villa godelet 75011 Paris', phone_number:'01.01.01.01.03')
-User.create!(email: 'user4@gnomes.fr', password: 'user04', first_name: 'User4', last_name: 'Three', address: '4, rue villa godelet 75011 Paris', phone_number:'01.01.01.01.04')
+User.create!(email: 'user1@gnomes.fr', password: 'user01', first_name: 'User1', last_name: 'One', address: '75, rue Nationale 75006 Paris', phone_number:'01.01.01.01.01')
+User.create!(email: 'user2@gnomes.fr', password: 'user02', first_name: 'User2', last_name: 'Two', address: '82, Place de la Madeleine 75012 Paris', phone_number:'01.01.01.01.02')
+User.create!(email: 'user3@gnomes.fr', password: 'user03', first_name: 'User3', last_name: 'Three', address: '55, rue Nationale 75004 Paris', phone_number:'01.01.01.01.03')
+User.create!(email: 'user4@gnomes.fr', password: 'user04', first_name: 'User4', last_name: 'Three', address: '59, Square de la Couronne 75002 Paris', phone_number:'01.01.01.01.04')
+
+puts 'Creating a lot of User'
+15.times do
+  user = User.create!(
+    email: Faker::Internet.email,
+    password: Faker::Alphanumeric.alphanumeric(number: 10),
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    address: Faker::Address.full_address,
+    phone_number: Faker::PhoneNumber.phone_number
+  )
+end
+puts 'Users Created!'
 
 Gnome.destroy_all
 
@@ -28,3 +40,25 @@ Gnome.create!(name: 'Yupi', size: 35, weight: 550, state: 'bon état', category:
 
 Gnome.create!(name: 'Koupin & Purlavi', size: 75, weight: 1320, state:'bon état', category: 'Groupé', gender: 'homme', mood:'Joyeux', outsider: false, traveler:false, available: true, price: 152, color:'Bleu', photo:'https://m.media-amazon.com/images/I/81emNi94qYL._AC_SX425_.jpg', user:User.all.sample)
 Gnome.create!(name: 'Amy & Detoujur', size: 68, weight: 968, state:'bon état', category: 'Groupé', gender: 'homme', mood: 'Joyeux', outsider: false, traveler:false, available: true, price: 152, color:'Bleu', photo:'https://content.pearl.fr/media/cache/default/article_large_high_nocrop/shared/images/articles/N/NX1/nain-de-jardin-duo-de-nains-avec-lapin-et-souche-d-arbre-ref_NX1262_1.jpg', user:User.all.sample)
+
+puts 'Creating a lot of Gnomes'
+
+80.times do
+  gnome = Gnome.create!(
+    name: Faker::GreekPhilosophers.name,
+    size: Faker::Number.decimal(l_digits: 2),
+    weight: Faker::Number.decimal(l_digits: 2),
+    state: ['Bon état', 'Très bon état', 'Comme neuf', 'Etat moyen'].sample,
+    category: CATEGORY.sample,
+    gender: ['Homme', 'Femme'].sample,
+    mood: MOOD.sample,
+    outsider: Faker::Boolean.boolean,
+    traveler: Faker::Boolean.boolean,
+    available: Faker::Boolean.boolean,
+    price: Faker::Number.decimal(l_digits: 2),
+    color: COLOR.sample,
+    photo: 'https://source.unsplash.com/800x600/?gnome',
+    user: User.all.sample
+  )
+end
+puts 'Gnomes Created!'
