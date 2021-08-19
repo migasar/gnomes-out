@@ -1,11 +1,9 @@
 <div class="container">
   <div class="margin-navbar">
-    <div class="first-title"><h1>Gnomes <%= @curent_category %></h1></div>
       <div class="container">
-        <div class="row">
+        <div class="first-title mb-4"><h1>Gnomes <%= @curent_category %></h1></div>
+        <div class="card-all-gnomes">
           <% @gnomes.each do |gnome|%>
-          <div class="col-sm-6">
-            <div class="card-container">
               <div class="card-product">
                 <img src="<%= gnome.photo %>" />
                 <div class="card-product-infos">
@@ -14,8 +12,6 @@
                   <p><strong><%= gnome.price %></strong>€ par jour</p>
                 </div>
               </div>
-            </div>
-          </div>
           <% end %>
         </div>
       </div>
