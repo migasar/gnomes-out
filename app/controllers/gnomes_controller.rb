@@ -3,20 +3,34 @@ class GnomesController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
 
   def index
+  #  @gnomes = policy_scope(Gnome)
+  #  if params.dig(:search, :category)
+  #    if params.dig(:search, :category) == ""
+  #      if params.dig(:search, :color) == ""
+  #        @gnomes = Gnome.all
+  #      else
+  #        @gnomes = @gnomes.where(color: params.dig(:search, :color))
+  #      end
+  #    else
+  #      if params.dig(:search, :color) == ""
+  #        @gnomes = @gnomes.where(category: params.dig(:search, :category))
+  #      else
+  #        @gnomes = @gnomes.where(color: params.dig(:search, :color), category: params.dig(:search, :category))
+  #      end
+  #    end
+  #  end
+
     @gnomes = policy_scope(Gnome)
-    if params.dig(:search, :category)
-      if params.dig(:search, :category) == ""
-        @gnomes = Gnome.all
-        @curent_category = ""
-      else
-        @gnomes = @gnomes.where(category: params.dig(:search, :category))
-        @curent_category = params.dig(:search, :category)+"s"
-      end
-    end
+    @gnomes = @gnomes.where(category: params.dig(:search, :category)) if params.dig(:search, :category) && params.dig(:search, :category) != ""
+    @gnomes = @gnomes.where(color: params.dig(:search, :color)) if params.dig(:search, :color) && params.dig(:search, :color) != ""
+    @gnomes = @gnomes.where(mood: params.dig(:search, :mood)) if params.dig(:search, :mood) && params.dig(:search, :mood) != ""
+
     @markers = @gnomes.geocoded.map do |gnome|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: gnome.latitude,
+        lng: gnome.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { gnome: gnome }),
+        image_url: helpers.asset_url('markergnome.png')
       }
     end
   end
@@ -66,6 +80,6 @@ class GnomesController < ApplicationController
     private
 
   def gnomes_params
-    params.require(:gnome).permit(:name, :photo, :size, :weight, :state, :category, :gender, :mood, :outsider, :traveler, :available, :price, :color, :user_id )
+    params.require(:gnome).permit(:name, :photo, :size, :weight, :state, :category, :gender, :mood, :outsider, :traveler, :available, :price, :longitude, :latitude, :color, :user_id )
   end
 end

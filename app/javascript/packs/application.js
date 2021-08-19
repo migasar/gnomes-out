@@ -31,6 +31,8 @@ import { tabsActive } from '../component/_tabs';
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   tabsActive();
-})
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+});
+

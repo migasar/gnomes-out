@@ -1,24 +1,22 @@
 <div class="container">
   <div class="margin-navbar">
     <h1>Récapitulatif de votre réservation</h1>
-
     <div class="dual-containers ">
       <div class="card-summary-gnome">
         <h2><%= @gnome.name %></h2>
         <%= image_tag @gnome.photo %>
       </div>
-
       <div class="card-summary-booking">
+        <% @owner = User.find(@booking.user_id) %>
         <h2>Récapitulatif de votre réservation</h2>
         <li>
-          <ul>Date de début: <%= @booking.date_start %></ul>
-          <ul>Date de fin: <%= @booking.date_end %></ul>
-          <ul>Montant de la réservation: <%= @booking.price_total %></ul>
-          <ul>Propriétaire du nain: <strong>Blanche Neige</strong></ul>
+          <ul>Date de début: <%= @booking.date_start.day %>/<%= @booking.date_start.month %>/<%= @booking.date_start.year %></ul>
+          <ul>Date de fin: <%= @booking.date_end.day %>/<%= @booking.date_end.month %>/<%= @booking.date_end.year %></ul>
+          <ul>Montant de la réservation: <%= @booking.price_total %>€</ul>
+          <ul>Propriétaire du nain: <%= @owner.first_name %> <%= @owner.last_name %> </ul>
         </li>
         <%= link_to "Valider ma commande", root_path, class: "btn btn-ghost" %>
       </div>
     </div>
-
   </div>
 </div>

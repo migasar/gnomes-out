@@ -21,7 +21,8 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.gnome = @gnome
     @booking.user = current_user
-    @booking.price_total= 84
+    @number_days = (@booking.date_end - @booking.date_start).to_i + 1
+    @booking.price_total= @number_days * @gnome.price
     authorize @booking
     if @booking.save
       redirect_to  gnome_booking_path(@gnome, @booking)
@@ -37,7 +38,6 @@ class BookingsController < ApplicationController
     @booking.destroy
     redirect_to gnome_bookings_path
   end
-
 
   private
 
