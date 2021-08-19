@@ -27,8 +27,10 @@ class GnomesController < ApplicationController
 
     @markers = @gnomes.geocoded.map do |gnome|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: gnome.latitude,
+        lng: gnome.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { gnome: gnome }),
+        image_url: helpers.asset_url('markergnome.png')
       }
     end
   end
@@ -78,6 +80,6 @@ class GnomesController < ApplicationController
     private
 
   def gnomes_params
-    params.require(:gnome).permit(:name, :photo, :size, :weight, :state, :category, :gender, :mood, :outsider, :traveler, :available, :price, :color, :user_id )
+    params.require(:gnome).permit(:name, :photo, :size, :weight, :state, :category, :gender, :mood, :outsider, :traveler, :available, :price, :longitude, :latitude, :color, :user_id )
   end
 end
