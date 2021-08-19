@@ -24,7 +24,6 @@ class GnomesController < ApplicationController
     @gnomes = @gnomes.where(category: params.dig(:search, :category)) if params.dig(:search, :category) && params.dig(:search, :category) != ""
     @gnomes = @gnomes.where(color: params.dig(:search, :color)) if params.dig(:search, :color) && params.dig(:search, :color) != ""
     @gnomes = @gnomes.where(mood: params.dig(:search, :mood)) if params.dig(:search, :mood) && params.dig(:search, :mood) != ""
-
     @markers = @gnomes.geocoded.map do |gnome|
       {
         lat: gnome.latitude,
