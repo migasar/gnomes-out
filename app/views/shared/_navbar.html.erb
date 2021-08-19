@@ -11,22 +11,31 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <div class="search">
-          <%= link_to (root_path), class: "nav-link"  do %>
+          <%= link_to (root_path), class: "nav-link text-white"  do %>
           <i class="fas fa-search"></i>
           <%="Chercher un gnome" %>
           <% end %>
         </div>
       </li>
       <li class="nav-item">
-        <div class="search">
-          <%= link_to (root_path), class: "nav-link"  do %>
+        <div class="search text-white">
+          <%= link_to (root_path), class: "nav-link "  do %>
           <i class="fas fa-plus">  </i>
           <%="Proposer un gnome" %>
           <% end %>
         </div>
       </li>
       <% if user_signed_in? %>
-        <li class="nav-item dropleft">
+      <li class="nav-item">
+        <div class="search">
+          <%= link_to (root_path), class: "nav-link "  do %>
+          <%="Messages" %>  <span class="badge rounded-pill black-backroung">1</span>
+          <% end %>
+        </div>
+      </li>
+      <% end %>
+      <% if user_signed_in? %>
+        <li class="nav-item dropleft ml-3">
           <%= image_tag "https://media.vanityfair.fr/photos/60d37b70043ccb70e8d2bd2b/3:2/w_711,h_474,c_limit/vf_cover_amelie_poulain_5100.jpeg",
               class: "avatar dropdown-toggle dropleft",
               id: "navbarDropdown",
@@ -34,6 +43,7 @@
             %>
           <div class="dropdown-menu dropdown-menu-right " aria-labelledby="navbarDropdown">
             <%= link_to "Profil", "#", class: "dropdown-item text-light" %>
+            <%= link_to "Messages", "#", class: "dropdown-item text-light" %>
             <%= link_to "Mes reservations", "#", class: "dropdown-item text-light" %>
             <%= link_to "Mes favoris", "#", class: "dropdown-item text-light" %>
             <%= link_to "Mes gnomes", my_gnomes_gnomes_path, class: "dropdown-item text-light" %>
@@ -41,7 +51,7 @@
           </div>
         </li>
       <% else %>
-      <li class="nav-item dropleft">
+      <li class="nav-item dropleft ml-3">
           <%= image_tag "https://www.lacij.fr/wp-content/uploads/2015/01/avatar.jpg",
               class: "avatar dropdown-toggle dropleft",
               id: "navbarDropdown",
