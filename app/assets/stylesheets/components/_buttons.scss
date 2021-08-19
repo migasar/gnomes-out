@@ -7,3 +7,14 @@
   background-color: $go-red;
   border: none;
 }
+
+.btn-mirror {
+  color: $go-red;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+  background-color: transparent;
+  // border: 1px solid $go-red;
+  // font-size: 0.9em;
+}
