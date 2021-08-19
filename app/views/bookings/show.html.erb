@@ -1,22 +1,45 @@
 <div class="container">
-  <div class="margin-navbar">
-    <h1>Récapitulatif de votre réservation</h1>
-    <div class="dual-containers ">
-      <div class="card-summary-gnome">
-        <h2><%= @gnome.name %></h2>
-        <%= image_tag @gnome.photo %>
-      </div>
-      <div class="card-summary-booking">
-        <% @owner = User.find(@booking.user_id) %>
-        <h2>Récapitulatif de votre réservation</h2>
-        <li>
-          <ul>Date de début: <%= @booking.date_start.day %>/<%= @booking.date_start.month %>/<%= @booking.date_start.year %></ul>
-          <ul>Date de fin: <%= @booking.date_end.day %>/<%= @booking.date_end.month %>/<%= @booking.date_end.year %></ul>
-          <ul>Montant de la réservation: <%= @booking.price_total %>€</ul>
-          <ul>Propriétaire du nain: <%= @owner.first_name %> <%= @owner.last_name %> </ul>
-        </li>
-        <%= link_to "Valider ma commande", root_path, class: "btn btn-ghost" %>
-      </div>
+  <div class="margin-navbar card-center">
+      <h1>Récapitulatif de votre réservation</h1>
+    <div class="card-booking-show container">
+      <%= image_tag(@gnome.photo, class:"photo-gnome-booking") %>
+      <h2><%= @gnome.name %></h2>
+      <% @owner = User.find(@booking.user_id) %>
+      <li class = "mt-3 border-bottom border-dark mb-4">
+        <ul class="d-flex justify-content-between">
+          <div class="first">
+            <u>Propriétaire du nain :</u>
+          </div>
+          <div class="second">
+            <strong><%= @owner.first_name %> <%= @owner.last_name %></strong>
+          </div>
+        </ul>
+        <ul class="d-flex justify-content-between">
+          <div class="first">
+            <u>Date de début :</u>
+          </div>
+          <div class="second">
+            <strong><%= @booking.date_start.day %>/<%= @booking.date_start.month %>/<%= @booking.date_start.year %></strong>
+          </div>
+        </ul>
+        <ul class="d-flex justify-content-between">
+          <div class="first">
+            <u>Date de fin :</u>
+          </div>
+          <div class="second">
+            <strong><%= @booking.date_end.day %>/<%= @booking.date_end.month %>/<%= @booking.date_end.year %></strong>
+          </div>
+        </ul>
+        <ul class="d-flex justify-content-between">
+          <div class="first">
+            <u>Montant de la réservation :</u>
+          </div>
+          <div class="second">
+            <strong><%= @booking.price_total %>€</strong>
+          </div>
+        </ul>
+      </li>
+      <%= link_to "Valider ma commande", root_path, class: "btn btn-ghost" %>
     </div>
   </div>
 </div>
