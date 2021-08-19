@@ -37,3 +37,20 @@
 .control-label{
   color: white !important;
 }
+
+.form_search{
+  font-size: 18px;
+  .search{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .questions{
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+}
