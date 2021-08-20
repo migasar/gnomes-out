@@ -35,10 +35,14 @@
     color: $go-black;
     h3{
       margin: 8px 0;
+      font-family: $go-font-subtitle;
+      font-weight: 700;
     }
     p{
       margin-bottom: 0;
       padding-top: 4;
+      font-family: $go-font-subtitle;
+      font-size: larger;
     }
 
   }
