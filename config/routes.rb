@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       get :my_gnomes
     end
     resources :bookings, only: [:index, :show, :new, :create, :edit, :update, :delete] do
-
+      get :validate, on: :member
     end
   end
 end
