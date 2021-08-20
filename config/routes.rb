@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     collection do
       get :my_gnomes
     end
-    resources :bookings, only: [:index, :show, :new, :create, :edit, :update, :delete] do
-
-    end
+    resources :bookings, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+    resources :reviews, only: [:new, :create, :index]
   end
+  resources :review, only: [:destroy]
 end
