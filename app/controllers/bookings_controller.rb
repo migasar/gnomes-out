@@ -31,6 +31,14 @@ class BookingsController < ApplicationController
     end
   end
 
+  def validate
+    @booking = Booking.find(params[:id])
+    @booking.update(validated: true)
+    flash[:notice] = 'Votre réservation a bien été validée.'
+    skip_authorization
+    redirect_to root_path
+  end
+
   def destroy
     @booking = booking.find(params[:id])
     @gnome = @booking.gnome

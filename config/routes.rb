@@ -7,8 +7,13 @@ Rails.application.routes.draw do
     collection do
       get :my_gnomes
     end
-    resources :bookings, only: [:index, :show, :new, :create, :edit, :update, :delete] do
 
+    resources :bookings, only: [:index, :show, :new, :create, :edit, :update, :delete]
+  end
+
+  resources :bookings do
+    member do
+      patch '/validate', to: 'bookings#validate'
     end
   end
 end
