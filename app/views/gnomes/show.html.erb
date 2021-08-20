@@ -2,7 +2,13 @@
   <div class="margin-navbar">
     <div id="gnome-presentation">
       <div class="card-show">
-        <div class="gnome-detail"><%= image_tag(@gnome.photo, class:"photo-gnome") %></div>
+        <div class="gnome-detail">
+          <%= image_tag(@gnome.photo, class:"photo-gnome") %>
+          <% @gnome.reviews.each do |review| %>
+            <p><%= review.comment %></p>
+            <p>Note : <%= review.rating %>/5</p>
+          <% end %>
+        </div>
         <div class="gnome-detail">
           <h1><%= @gnome.name %></h1>
           <%= if @gnome.category == "groupé"
@@ -12,10 +18,12 @@
           end %>
           <%= simple_form_for [ @gnome, @booking ] do |f| %>
             <%= f.input :date_start, as: :date, html5: true, label:"Date de début" %>
-            <%= f.input :date_end, as: :date, html5: true, label:"Date de début" %>
-            <%= f.submit "Faire sa réservation", class: "btn btn-primary btn-box-shadow t" %>
-          <% end %>
-          <%= link_to "Trouver un autre gnome", root_path, class:"btn btn-light mt-2"  %>
+            <%= f.input :date_end, as: :date, html5: true, label:"Date de fin" %>
+            <div class="d-flex justify-content-between pr-5">
+              <%= f.submit "Faire sa réservation", class: "btn-ghost" %>
+            <% end %>
+            <%= link_to "Trouver un autre gnome", root_path, class:"btn-mirror"  %>
+            </div>
         </div>
       </div>
     </div>

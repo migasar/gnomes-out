@@ -2,7 +2,7 @@
   <div class="margin-navbar">
     <%= simple_form_for [ @gnome, @review ] do |f| %>
       <%= f.input :comment %>
-      <%= f.input :rating %>
+      <%= f.input :rating, collection: 1..5 %>
       <%= f.submit "Submit", class: "btn-ghost" %>
     <% end %>
   </div>
