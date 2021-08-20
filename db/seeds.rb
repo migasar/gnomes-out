@@ -4,6 +4,7 @@ CATEGORY = %w[Authentique Zombie Bdsm Familial Potache Zen Groupé Mignon Connu]
 COLOR = %w[Rouge Vert Blanc Jaune Orange Bleu Noir]
 MOOD = %w[Joyeux Triste Colérique Détendu]
 Booking.destroy_all
+Review.destroy_all
 User.destroy_all
 
 User.create!(email: 'user1@gnomes.fr', password: 'user01', first_name: 'Amélie', last_name: 'Poulain', address: '75, rue Nationale 75006 Paris', phone_number:'01.01.01.01.01')
@@ -25,6 +26,7 @@ end
 puts 'Users Created!'
 
 Gnome.destroy_all
+
 
 Gnome.create!(address: "51 rue Saint Germain, Gap", name: 'Stéphan', size: 81, weight: 743, state:['Bon état', 'Très bon état', 'Comme neuf', 'Etat moyen'].sample, category: 'Potache', gender: 'Homme', mood: 'Détendu', outsider: Faker::Boolean.boolean, traveler: false, price: 36, color: COLOR.sample, photo:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-Xp12r__CYBYBshppYgCR_xTUQnFfgBmOrQ&usqp=CAU', user:User.all.sample)
 Gnome.create!(address: "70 Rue de Verdun, Mont-de-marsan", name: 'Walid', size: 48, weight: 670, state:['Bon état', 'Très bon état', 'Comme neuf', 'Etat moyen'].sample, category: 'Potache', gender: 'Homme', mood: 'Détendu', outsider: Faker::Boolean.boolean, traveler: true, price: 29, color: COLOR.sample, photo:'https://imgaz1.chiccdn.com/thumb/wap/oaupload/newchic/images/A4/95/2dcc55ab-6245-46f2-9c08-174251c87e4a.jpg.webp?s=240x320', user:User.all.sample)
@@ -52,7 +54,7 @@ Gnome.create!(address: "2 avenue Fritzlang, Bois-d'arcy", name: 'Yupi', size: 35
 Gnome.create!(address: "9 boulevard voltaire, Issy-les-moulineaux", name: 'Koupin & Purlavi', size: 75, weight: 1320, state:'bon état', category: 'Groupé', gender: 'homme', mood:'Joyeux', outsider: false, traveler:false, available: true, price: 152, color:'Bleu', photo:'https://m.media-amazon.com/images/I/81emNi94qYL._AC_SX425_.jpg', user:User.all.sample)
 Gnome.create!(address: "16 villa Gaudelet, Paris", name: 'Amy & Detoujur', size: 68, weight: 968, state:'bon état', category: 'Groupé', gender: 'homme', mood: 'Joyeux', outsider: false, traveler:false, available: true, price: 152, color:'Bleu', photo:'https://content.pearl.fr/media/cache/default/article_large_high_nocrop/shared/images/articles/N/NX1/nain-de-jardin-duo-de-nains-avec-lapin-et-souche-d-arbre-ref_NX1262_1.jpg', user:User.all.sample)
 
-puts 'Creating a lot of Gnomes' 
+puts 'Creating a lot of Gnomes'
 
 # 20.times do
 #   gnome = Gnome.create!(
