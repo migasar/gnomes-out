@@ -6,6 +6,7 @@ const buildMap = (mapElement) => {
   return new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/ecirilo/cksj2i7a68o1g18ntewt9t8im',
+    zoom: 9
   });
 };
 
