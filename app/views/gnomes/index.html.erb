@@ -8,17 +8,18 @@
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         <div class="card-all-gnomes">
           <% @gnomes.each do |gnome|%>
-          <div class="card-polaroid">
-            <div class="polaroid">
-              <div class="polaroid-img" style="background-image:  url(<%= gnome.photo %>)" >
-
+            <%= link_to(gnome_path(gnome)) do %>
+              <div class="card-polaroid">
+                <div class="polaroid">
+                  <div class="polaroid-img" style="background-image:  url(<%= gnome.photo %>)" >
+                  </div>
+                  <div class="caption">
+                    <h3><%=  gnome.name %></h3>
+                    <p><strong><%= gnome.price %></strong>€ par jour</p>
+                  </div>
+                </div>
               </div>
-              <div class="caption">
-                <h3><%= link_to gnome.name, gnome_path(gnome) %></h3>
-                <p><strong><%= gnome.price %></strong>€ par jour</p>
-              </div>
-            </div>
-          </div>
+            <% end %>
           <% end %>
         </div>
       </div>
