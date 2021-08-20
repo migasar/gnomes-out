@@ -31,13 +31,16 @@
   .caption {
     font-size: 1.2rem;
     text-align: center;
-    padding-top: 7px;
-    a{
-      color: $go-black;
+    padding-top: 9px;
+    color: $go-black;
+    h3{
+      margin: 8px 0;
     }
     p{
-      margin-bottom: 1;
+      margin-bottom: 0;
+      padding-top: 4;
     }
+
   }
 
 
