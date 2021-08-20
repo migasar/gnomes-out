@@ -3,6 +3,9 @@
       <div class="container">
 
         <div class="first-title mb-4"><h1>Resultats recherche</h1></div>
+
+        <%= render 'shared/search-subcategory' %>
+
         <div class="mapbox" id="map"
         style="width: 100%; height: 600px;"data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>

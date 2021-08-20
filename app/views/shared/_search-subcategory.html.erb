@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="form_search">
+    <%= simple_form_for :search, url: gnomes_path, method: :get do |f| %>
+      <div class="questions">
+        <%= f.input :category, collection: Gnome::CATEGORY, label: "Quelle categorie ?", label_html: {class: "$go-red mb-3"} %>
+        <%= f.input :color, collection: Gnome::COLOR, label: "Quelle couleur ?", label_html: {class: "text-white mb-3"} %>
+        <%= f.input :mood, collection: Gnome::MOOD, label: "Quelle humeur ?", label_html: {class: "text-white mb-3"} %>
+      </div>
+      <%= f.submit "Trouver votre gnome", class: "btn-mirror" %>
+    <% end %>
+  </div>
+</div>
