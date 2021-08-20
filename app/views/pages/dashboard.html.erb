@@ -38,9 +38,45 @@
         </div>
       </div>
       <div class="tab-pane fade" id="Messages" role="tabpanel" aria-labelledby="Messages-tab">Messages content...</div>
-      <div class="tab-pane fade" id="Réservations" role="tabpanel" aria-labelledby="Réservations-tab">Réservations content...</div>
+      <div class="tab-pane list-booking fade" id="Réservations" role="tabpanel" aria-labelledby="Réservations-tab">
+        <div class="card-booking-show container">
+          <%@bookings.each do |booking| %>
+          <div>
+            <%= image_tag(booking.gnome.photo, class:"photo-recap-booking") %>
+              <h2><%= booking.gnome.name %></h2>
+            <ul class="d-flex justify-content-between">
+              <div class="first-book">
+                <u>Date de début :</u>
+              </div>
+              <div class="second-book">
+                <strong><%= booking.date_start.day %>/<%= booking.date_start.month %>/<%= booking.date_start.year %></strong>
+              </div>
+            </ul>
+            <ul class="d-flex justify-content-between">
+              <div class="first-book">
+                <u>Date de fin :</u>
+              </div>
+              <div class="second-book">
+                <strong><%= booking.date_end.day %>/<%= booking.date_end.month %>/<%= booking.date_end.year %></strong>
+              </div>
+            </ul>
+            <ul class="d-flex justify-content-between">
+              <div class="first-book">
+                <u>Propriétaire :</u>
+              </div>
+              <div class="second-book">
+                <strong><%= booking.user.first_name %> <%= booking.user.last_name %></strong>
+              </div>
+            </ul>
+              <h5> Réservation validée !</h3>
+          </div>
+          <% end %>
+        </div>
+
+
+      </div>
       <div class="tab-pane fade" id="Favoris" role="tabpanel" aria-labelledby="Favoris-tab">Favoris content...</div>
-      <div class="tab-pane fade" id="Gnomes" role="tabpanel" aria-labelledby="Gnomes-tab">Gnomes content...</div>
+      <div class="tab-pane fade" id="Gnomes" role="tabpanel" aria-labelledby="Gnomes-tab"> Nous n'avez mis aucun gnome à louer.</div>
 
     </div>
   </div>
