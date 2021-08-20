@@ -31,6 +31,12 @@ class BookingsController < ApplicationController
     end
   end
 
+  def validate
+    @validate = Booking.find(params[:id])
+    @validate.update_attribute(:validated, true)
+    redirect_to root_path
+  end
+
   def destroy
     @booking = booking.find(params[:id])
     @gnome = @booking.gnome
