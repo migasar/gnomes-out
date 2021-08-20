@@ -65,7 +65,23 @@
     width: 300px;
     height: 250px;
     border-radius: 5px;
-    box-shadow:0 10px 30px rgba(0,0,0,.3);
     margin-top: 0;
     margin-left: 50%;
+}
+
+.info-dash .photo-recap-booking {
+  margin-left: 0px;
+}
+
+.card-booking-show .first-book {
+ margin-right: 5px;
+}
+
+.card-booking-show {
+  display: flex;
+}
+
+.info-dash .card-booking-show {
+  margin-top: 5px;
+  margin-left: 15px;
 }
