@@ -2,8 +2,9 @@
   <div class="margin-navbar card-center">
     <h1>Récapitulatif de votre réservation</h1>
     <div class="card-booking-show container">
-      <%= image_tag(@gnome.photo, class:"photo-gnome-booking") %>
-      <h2><%= @gnome.name %></h2>
+      <div class="photo-gnome-booking" style="background-image:  url(<%= @gnome.photo %>)">
+      </div>
+      <h2><%= @gnome.name %></h2 >
       <% @owner = User.find(@booking.user_id) %>
 
       <li class="mt-3 border-bottom border-dark mb-4">

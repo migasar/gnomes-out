@@ -36,7 +36,7 @@ class BookingsController < ApplicationController
     @booking.update(validated: true)
     flash[:notice] = 'Votre réservation a bien été validée.'
     skip_authorization
-    redirect_to root_path
+    redirect_to dashboard_path
   end
 
   def destroy
