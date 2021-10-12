@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.16.0"
 
-set :application, "testcapi.com"
+set :application, "testcapi"
 set :repo_url, "git@github.com:ecirilo1/testcapi.git"
 
 # set :application, "testcapi"
