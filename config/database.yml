@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: gnomes_out_production
-  username: gnomes_out
-  password: <%= ENV['GNOMES_OUT_DATABASE_PASSWORD'] %>
+  username: ubuntu
+  password: Rails.application.credentials.dig(:production, :db_password)
